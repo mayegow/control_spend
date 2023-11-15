@@ -16,7 +16,7 @@ import Salud from '../img/icono_salud.svg'
 import Ahorro from '../img/icono_ahorro.svg'
 import Gastos from '../img/icono_gastos.svg'
 
-export default function Gasto({gasto}) {
+export default function Gasto({gasto, setGastoEditar, eliminarGasto}) {
 
     const diccionarioIconos = {
         "ahorro": Ahorro,
@@ -30,14 +30,16 @@ export default function Gasto({gasto}) {
     const {nombre, cantidad, categoria, id, fecha} = gasto
     const leadingActions = () => (
         <LeadingActions>
-            <SwipeAction onClick={()=> console.log("Editar")}>
+            <SwipeAction onClick={()=> setGastoEditar(gasto)}>
                 Editar
             </SwipeAction>
         </LeadingActions>
         )
     const trailingActions = () => (
         <TrailingActions>
-            <SwipeAction onClick={()=> console.log("Eliminar")}>
+            <SwipeAction 
+                onClick={()=> eliminarGasto(gasto)}
+                destructive={true}>
                 Eliminar
             </SwipeAction>
         </TrailingActions>

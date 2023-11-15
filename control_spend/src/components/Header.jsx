@@ -11,7 +11,7 @@ export default function Header({
     <header>
         <h1>Planificador de gastos</h1>
         {isValidPresupuesto ? (
-          <ControlPresupuesto gastos={gastos} presupuesto={presupuesto}/>)
+          <ControlPresupuesto gastos={gastos} presupuesto={presupuesto} />)
           :
           (<NuevoPresupuesto
             presupuesto={presupuesto}
